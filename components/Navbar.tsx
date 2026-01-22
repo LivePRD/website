@@ -37,12 +37,12 @@ const Navbar: React.FC = () => {
           
           <div className="flex items-center">
             <a 
-              href="#waitlist" 
+              href="http://app.hifred.ai/?source=site" 
               className={`px-6 py-3 rounded-full text-white text-sm font-bold transition-all shadow-lg ${
                 isScrolled ? 'bg-indigo-600 hover:bg-indigo-700' : 'bg-slate-900 hover:bg-slate-800'
               }`}
             >
-              Get Started
+              Join The Waitlist
             </a>
           </div>
         </div>

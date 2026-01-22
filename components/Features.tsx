@@ -66,7 +66,7 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section className="relative bg-white pt-12 pb-24" id="features">
+    <section className="relative bg-white pt-12 pb-12" id="features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 space-y-4">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">

@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#waitlist" className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 text-white font-semibold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-indigo-100 hover:-translate-y-1">
+              <a href="http://app.hifred.ai/?source=site" className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-slate-900 text-white font-semibold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-indigo-100 hover:-translate-y-1">
                 Start Building with Fred
               </a>
             </div>

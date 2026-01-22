@@ -3,7 +3,7 @@ import React from 'react';
 
 const Waitlist: React.FC = () => {
   return (
-    <section className="py-24 bg-white" id="waitlist">
+    <section className="pt-12 pb-24 bg-white" id="waitlist">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl bg-slate-900 overflow-hidden p-10 md:p-20 text-center border border-slate-800">
           {/* Decorative background elements */}
@@ -20,20 +20,17 @@ const Waitlist: React.FC = () => {
               We're rolling out access slowly to ensure every team gets the best experience. Secure your spot in line today.
             </p>
             
-            <form className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Enter your work email" 
-                className="flex-1 px-6 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
-                required
-              />
-              <button className="px-8 py-4 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-900/20">
-                Get Early Access
-              </button>
-            </form>
+            <div className="flex justify-center">
+              <a 
+                href="http://app.hifred.ai/?source=site"
+                className="inline-block px-10 py-4 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-900/20"
+              >
+                Join The Waitlist
+              </a>
+            </div>
             
             <p className="mt-8 text-sm text-slate-500 font-medium tracking-wide uppercase">
-              Join 1,200+ product leaders already on the list.
+              Join 480+ product leaders already on the list.
             </p>
           </div>
         </div>
