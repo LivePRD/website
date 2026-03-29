@@ -274,21 +274,6 @@ body {
   gap: 1rem;
 }
 
-.btn--secondary {
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  background: var(--slate-50);
-  color: var(--slate-700);
-  border: 2px solid var(--slate-300);
-  border-radius: 9999px;
-}
-
-.btn--secondary:hover {
-  background: var(--slate-100);
-  border-color: var(--slate-400);
-  color: var(--slate-900);
-}
-
 .hero__cta-note {
   font-size: .875rem;
   color: var(--slate-400);
@@ -306,6 +291,21 @@ body {
   text-decoration: none;
   transition: background .25s, opacity .25s;
   border-radius: var(--radius);
+}
+
+.btn--secondary {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background: var(--slate-50);
+  color: var(--slate-700);
+  border: 2px solid var(--slate-300);
+  border-radius: 9999px;
+}
+
+.btn--secondary:hover {
+  background: var(--slate-100);
+  border-color: var(--slate-400);
+  color: var(--slate-900);
 }
 
 .btn--primary {
