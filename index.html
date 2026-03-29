@@ -1,45 +1,560 @@
-
 <!DOCTYPE html>
-<html lang="en" style="font-size: 16px; scroll-behavior: smooth;">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HiFred | Precise Product Requirements</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin"">
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        font-size: 16px;
-      }
-      body {
-        font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
-      }
-      h3 {
-        font-weight: 600 !important;
-        font-size: 1.5rem !important;
-      }
-      .gradient-text {
-        background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .fred-shadow {
-        box-shadow: 0 20px 50px -12px rgba(79, 70, 229, 0.2);
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
+<html lang="en">
+
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TH5VZRN7');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="https://static.hifred.ai/images/favicon.svg" />
+  <title>HiFred | AI for Product Managers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,300;1,9..40,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
-  <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
-    <div id="root"></div>
-  </body>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH5VZRN7" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager -->
+
+  <!-- Background Decor -->
+  <div class="bg-decor" aria-hidden="true">
+    <div class="bg-decor__blob bg-decor__blob--top-right"></div>
+    <div class="bg-decor__blob bg-decor__blob--bottom-left"></div>
+  </div>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <img src="https://static.hifred.ai/images/logo.svg" alt="HiFred" class="navbar__logo"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" />
+      <div class="navbar__links">
+        <a href="#how-it-works" class="navbar__link navbar__link--nav">How it works</a>
+        <a href="#integrations" class="navbar__link navbar__link--nav">Integrations</a>
+        <a href="#enterprise" class="navbar__link navbar__link--nav">Enterprise</a>
+        <a href="#live-specs" class="navbar__link navbar__link--nav">Why Live Spec?</a>
+        <a href="https://app.hifred.ai" class="navbar__link">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── MAIN ─── -->
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+
+        <!-- Badge -->
+        <div class="badge animate-fade-in">
+          <span class="badge__dot">
+            <span class="badge__ping"></span>
+          </span>
+          Like Cursor, for PMs
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero__title">
+          <!-- hiFred turns PMs into<br class="hero__br" /> -->
+          Engineers ship 10X. <br class="hero__br" />Now PMs can too.
+          <!-- <span class="text-gradient">superhumans</span> -->
+
+
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero__subtitle">
+          Turn loose notes and Jira context into bulletproof requirements, catch gaps and edge cases early, and answer
+          engineering questions in the ticket 24/7.
+        </p>
+
+        <!-- CTA -->
+        <div class="hero__cta">
+          <div class="hero__cta-buttons">
+            <a href="https://app.hifred.ai/?utm_campaign=beta" class="btn btn--primary">
+              <span>Get Early Access</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="btn__arrow" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a href="https://app.hifred.ai/demo" class="btn btn--secondary">
+              <span>Try a Demo</span>
+            </a>
+          </div>
+          <p class="hero__cta-note">Free during early access phase.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Browser Mockup -->
+    <div class="container mockup-wrapper">
+      <div class="mockup float-animation">
+        <!-- Browser bar -->
+        <div class="mockup__bar">
+          <div class="mockup__dots">
+            <span class="mockup__dot mockup__dot--red"></span>
+            <span class="mockup__dot mockup__dot--yellow"></span>
+            <span class="mockup__dot mockup__dot--green"></span>
+          </div>
+          <div class="mockup__address">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mockup__lock" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+            app.hifred.ai/jira/PROJ-123
+          </div>
+        </div>
+        <!-- Video -->
+        <div class="mockup__video-wrap">
+          <video class="mockup__video" src="https://static.hifred.ai/images/lp_video.mp4" autoplay loop muted
+            playsinline></video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statement Section -->
+    <section class="statement">
+      <div class="container statement__inner">
+        <h2 class="statement__title">
+          60% of your time. Writing specs, chasing feedback, re-explaining.
+        </h2>
+        <p class="statement__body">
+          That's the average PM's week. hiFred changes what you spend that time on. Fred thinks
+          alongside you, catches what your specs are missing, and keeps engineers aligned automatically — so you can
+          focus on the decisions only you can make.
+        </p>
+
+        <div class="statement__buttons">
+          <a href="https://app.hifred.ai/?utm_campaign=beta" class="btn btn--statement">
+            <span>Get Early Access</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="btn__arrow" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="https://app.hifred.ai/demo" class="btn btn--statement-outline">
+            <span>Try a Demo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ─── WHY LIVE SPECS ─── -->
+    <section class="live-specs" id="live-specs">
+      <div class="container">
+        <div class="live-specs__header">
+          <p class="section-label">Live Specs</p>
+          <h2 class="section-title">
+            Your PRD is already out of date. <br /> Meet <span class="text-gradient">Live Spec</span>.
+          </h2>
+          <p class="section-subtitle">
+            The moment it's written, it starts drifting from reality. Engineers ask questions it doesn't answer.
+            Decisions get made in Slack, never captured. By sprint end, nobody trusts it. A Live Spec fixes that — it
+            evolves with the ticket, stays inside the conversation, and Fred keeps it current so you don't have to.
+          </p>
+        </div>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="comparison-table__th comparison-table__th--old">Old PRD</th>
+              <th class="comparison-table__th comparison-table__th--new">Live Spec</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="comparison-table__td--old">Outdated the moment it's saved</td>
+              <td class="comparison-table__td--new">Evolves with every decision and conversation</td>
+            </tr>
+            <tr>
+              <td class="comparison-table__td--old">Gaps found by engineers mid-sprint</td>
+              <td class="comparison-table__td--new">Gaps caught before sprint starts</td>
+            </tr>
+            <tr>
+              <td class="comparison-table__td--old">PM becomes the bottleneck</td>
+              <td class="comparison-table__td--new">Fred answers engineering questions 24/7</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ─── -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">How it works</p>
+          <h2 class="section-title">From raw idea to shipped feature</h2>
+        </div>
+
+        <div class="hiw-rows">
+
+          <!-- Row 1 -->
+          <div class="hiw-row">
+            <div class="hiw-row__media">
+              <img src="https://static.hifred.ai/images/site/start_from_jira.png" alt="Connect your Jira ticket"
+                class="hiw-img hiw-img--no-shadow" />
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">01</span></div>
+              <h3 class="hiw-row__title">Connect your Jira ticket - Fred reads everything</h3>
+              <p class="hiw-row__text">Paste a link or open hiFred directly from Jira. Fred reads the ticket, comments,
+                linked designs, and previous decisions — so you never have to repeat yourself or re-explain the context.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 2 (reversed) -->
+          <div class="hiw-row hiw-row--reverse">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="https://static.hifred.ai/images/site/specing.mp4" class="hiw-img" autoplay loop muted
+                  playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">02</span></div>
+              <h3 class="hiw-row__title">Fred drafts, you decide - spec done in seconds</h3>
+              <p class="hiw-row__text">Fred turns your context into a structured Live Spec in seconds — acceptance
+                criteria, edge cases, open questions. You stay in control of every decision while Fred handles the heavy
+                lifting.</p>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="hiw-row">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="https://static.hifred.ai/images/site/work_visually_01.mp4" class="hiw-img" autoplay loop
+                  muted playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">03</span></div>
+              <h3 class="hiw-row__title">Attach your Figma screens - Fred reasons visually</h3>
+              <p class="hiw-row__text">Attach your Figma screens and Fred reasons visually — mapping UI states, flows,
+                and edge cases directly into the spec. No more translating designs into requirements by hand.</p>
+            </div>
+          </div>
+
+          <!-- Row 4 (reversed) -->
+          <div class="hiw-row hiw-row--reverse">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="https://static.hifred.ai/images/site/engineers.mp4" class="hiw-img" autoplay loop muted
+                  playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">04</span></div>
+              <h3 class="hiw-row__title">Catch gaps before engineers do</h3>
+              <p class="hiw-row__text">Fred flags ambiguities, missing states, and conflicting requirements before a
+                single line of code is written. Ship fewer surprises.</p>
+            </div>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="hiw-row">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="http://static.hifred.ai/images/site/comments.mp4" class="hiw-img" autoplay loop muted
+                  playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">05</span></div>
+              <h3 class="hiw-row__title"> Engineers ask questions. Fred answers. You sleep.</h3>
+              <p class="hiw-row__text">Engineers ask questions directly in the ticket. Fred answers instantly from the
+                spec — so engineers never wait, and you're never interrupted.</p>
+            </div>
+          </div>
+
+          <!-- Row 6 (reversed) -->
+          <div class="hiw-row hiw-row--reverse">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="https://static.hifred.ai/images/site/mcp.mp4" class="hiw-img" autoplay loop muted playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">06</span></div>
+              <h3 class="hiw-row__title">The full spec, inside Cursor. No context switching.</h3>
+              <p class="hiw-row__text">Fred's Live Specs are available directly inside Cursor. Engineers get the full
+                context — requirements, edge cases, decisions — without ever leaving their editor.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW FRED WRITES SPECS DIFFERENTLY ─── -->
+    <section class="specs-diff">
+      <div class="container">
+        <div class="specs-diff__header">
+          <div class="specs-diff__header-left">
+            <p class="section-label">The Fred difference</p>
+            <h2 class="section-title">You make the calls. Fred makes sure you never miss one.</h2>
+          </div>
+          <div class="specs-diff__header-right">
+            <p class="section-subtitle">Most AI tools give you a blank box and wait. Fred knows your ticket, your team,
+              your designs, and your decisions. It doesn't generate from nothing — it builds from everything you've
+              already done. That's why nothing slips.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── WORKS WITH YOUR EXISTING STACK ─── -->
+    <section class="stack" id="integrations">
+      <div class="container stack__inner">
+        <p class="section-label">Your stack, untouched</p>
+        <h2 class="section-title">Works with your existing stack</h2>
+        <p class="section-subtitle">hiFred layers on top of the tools you already use. No migration, no IT ticket, no
+          6-month rollout. Just connect and go.</p>
+        <span class="chip--coming-soon">Coming soon</span>
+        <div class="stack__logos">
+          <div class="stack__logo-item">
+            <svg fill="#0052CC" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Jira</title>
+              <path
+                d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z" />
+            </svg>
+            <span>Jira</span>
+          </div>
+          <div class="stack__logo-item">
+            <svg fill="#172B4D" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Confluence</title>
+              <path
+                d="M.87 18.257c-.248.382-.53.875-.763 1.245a.764.764 0 0 0 .255 1.04l4.965 3.054a.764.764 0 0 0 1.058-.26c.199-.332.454-.763.733-1.221 1.967-3.247 3.945-2.853 7.508-1.146l4.957 2.337a.764.764 0 0 0 1.028-.382l2.364-5.346a.764.764 0 0 0-.382-1 599.851 599.851 0 0 1-4.965-2.361C10.911 10.97 5.224 11.185.87 18.257zM23.131 5.743c.249-.405.531-.875.764-1.25a.764.764 0 0 0-.256-1.034L18.675.404a.764.764 0 0 0-1.058.26c-.195.335-.451.763-.734 1.225-1.966 3.246-3.945 2.85-7.508 1.146L4.437.694a.764.764 0 0 0-1.027.382L1.046 6.422a.764.764 0 0 0 .382 1c1.039.49 3.105 1.467 4.965 2.361 6.698 3.246 12.392 3.029 16.738-4.04z" />
+            </svg>
+            <span>Confluence</span>
+          </div>
+          <div class="stack__logo-item">
+            <svg fill="#5E6AD2" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Linear</title>
+              <path
+                d="M2.886 4.18A11.982 11.982 0 0 1 11.99 0C18.624 0 24 5.376 24 12.009c0 3.64-1.62 6.903-4.18 9.105L2.887 4.18ZM1.817 5.626l16.556 16.556c-.524.33-1.075.62-1.65.866L.951 7.277c.247-.575.537-1.126.866-1.65ZM.322 9.163l14.515 14.515c-.71.172-1.443.282-2.195.322L0 11.358a12 12 0 0 1 .322-2.195Zm-.17 4.862 9.823 9.824a12.02 12.02 0 0 1-9.824-9.824Z" />
+            </svg>
+            <span>Linear</span>
+          </div>
+          <div class="stack__logo-item">
+            <svg fill="#000000" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Notion</title>
+              <path
+                d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z" />
+            </svg>
+            <span>Notion</span>
+          </div>
+          <div class="stack__logo-item">
+            <svg fill="#4A154B" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Slack</title>
+              <path
+                d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
+            </svg>
+            <span>Slack</span>
+          </div>
+          <div class="stack__logo-item">
+            <svg fill="#181717" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ENTERPRISE READY ─── -->
+    <section class="enterprise" id="enterprise">
+      <div class="container">
+        <div class="section-header section-header--centered">
+          <p class="section-label">Enterprise</p>
+          <h2 class="section-title">Fred is enterprise ready</h2>
+          <p class="section-subtitle">Built for teams that need security, control, and compliance without compromising
+            speed.</p>
+        </div>
+        <div class="enterprise__grid">
+          <div class="enterprise__card">
+            <div class="enterprise__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="enterprise__card-title">SOC 2 Type II</h3>
+            <p class="enterprise__card-text">Your data is handled with the security standards your InfoSec team expects.
+            </p>
+          </div>
+          <div class="enterprise__card">
+            <div class="enterprise__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+              </svg>
+            </div>
+            <h3 class="enterprise__card-title">Role-based permissions</h3>
+            <p class="enterprise__card-text">Fine-grained permissions across teams, projects, and spec types. Control
+              who can read, edit, or publish.</p>
+          </div>
+          <div class="enterprise__card">
+            <div class="enterprise__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="enterprise__card-title">Your data stays yours</h3>
+            <p class="enterprise__card-text">Your specs and ticket data never train our models. What's yours stays
+              yours.</p>
+          </div>
+          <div class="enterprise__card">
+            <div class="enterprise__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+            </div>
+            <h3 class="enterprise__card-title">Private VPC deployment</h3>
+            <p class="enterprise__card-text">Deploy hiFred inside your own cloud environment. Full infrastructure
+              isolation for the most security-conscious teams.</p>
+          </div>
+        </div>
+        <div class="statement__buttons" style="margin-top: 3rem;">
+          <a href="https://app.hifred.ai/?utm_campaign=beta" class="btn btn--statement">
+            <span>Get Early Access</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="btn__arrow" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="https://app.hifred.ai/demo" class="btn btn--statement-outline">
+            <span>Try a Demo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2026 HiFred AI. Built for PMs by PMs.</p>
+      <div class="footer__links">
+        <a href="https://static.hifred.ai/legal/privacy-policy.html" target="_blank" rel="noopener noreferrer"
+          class="footer__link">Privacy policy</a>
+        <a href="https://static.hifred.ai/legal/terms.html" target="_blank" rel="noopener noreferrer"
+          class="footer__link">Terms and conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── JOIN BETA MODAL ─── -->
+  <div class="modal-overlay" id="betaModal" role="dialog" aria-modal="true" aria-labelledby="betaModalTitle">
+    <div class="modal">
+      <div class="modal__head">
+        <h3 class="modal__title" id="betaModalTitle">Join our Beta</h3>
+        <button class="modal__close" onclick="closeModal('betaModal')" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Form state -->
+      <form class="modal__form" id="betaForm" onsubmit="handleBetaSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="betaEmail">Work Email</label>
+          <input class="form-input" type="email" id="betaEmail" placeholder="name@company.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="betaRole">Job Title</label>
+          <select class="form-input" id="betaRole">
+            <option>Product Manager</option>
+            <option>Senior PM</option>
+            <option>Product Owner</option>
+            <option>CPO / VP of Product</option>
+            <option>Engineering Manager</option>
+          </select>
+        </div>
+        <button class="btn btn--dark btn--full" type="submit">Reserve your spot</button>
+        <p class="form-note">By joining, you agree to our terms of service and early access guidelines.</p>
+      </form>
+
+      <!-- Success state -->
+      <div class="modal__success" id="betaSuccess" hidden>
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h4 class="success-title">You're on the list!</h4>
+        <p class="success-body">Thanks for your interest in HiFred. We'll be in touch soon with your access key.</p>
+        <button class="btn btn--outline" onclick="closeModal('betaModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
