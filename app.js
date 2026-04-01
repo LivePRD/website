@@ -11,6 +11,37 @@
 })();
 
 
+// ── Mobile menu ───────────────────────────────────────────
+(function () {
+  const burger = document.getElementById('burgerBtn');
+  const closeBtn = document.getElementById('menuCloseBtn');
+  const menu = document.getElementById('mobileMenu');
+
+  function openMenu() {
+    menu.classList.add('is-open');
+    requestAnimationFrame(() => menu.classList.add('is-visible'));
+    burger.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu.classList.remove('is-visible');
+    burger.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    menu.addEventListener('transitionend', () => menu.classList.remove('is-open'), { once: true });
+  }
+
+  burger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+
+  menu.querySelectorAll('.mobile-menu__link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+})();
+
+
 // ── Modal helpers ─────────────────────────────────────────
 function openModal(id) {
   const overlay = document.getElementById(id);
