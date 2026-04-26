@@ -14,6 +14,97 @@
     })(window, document, 'script', 'dataLayer', 'GTM-TH5VZRN7');</script>
   <!-- End Google Tag Manager -->
 
+  <!-- Cookie consent banner -->
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
+  <script src="cookie-banner/silktide-consent-manager.js"></script>
+  <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: {
+        showBackground: true
+      },
+      cookieIcon: {
+        position: "bottomRight"
+      },
+      cookieTypes: [
+        {
+          id: "necessary",
+          name: "Necessary",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          required: false,
+          onAccept: function () {
+            console.log('Add accept logic for Necessary');
+          },
+          onReject: function () {
+            console.log('Add reject logic for Necessary');
+          }
+        },
+        {
+          id: "analytics",
+          name: "Analytics",
+          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          required: false,
+          onAccept: function () {
+            gtag('consent', 'update', {
+              analytics_storage: 'granted',
+            });
+            dataLayer.push({
+              'event': 'consent_accepted_analytics',
+            });
+          },
+          onReject: function () {
+            gtag('consent', 'update', {
+              analytics_storage: 'denied',
+            });
+          }
+        },
+        {
+          id: "advertising",
+          name: "Advertising",
+          description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+          required: false,
+          onAccept: function () {
+            gtag('consent', 'update', {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+            });
+            dataLayer.push({
+              'event': 'consent_accepted_advertising',
+            });
+          },
+          onReject: function () {
+            gtag('consent', 'update', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+            });
+          }
+        }
+      ],
+      text: {
+        banner: {
+          description: "\n\t\t\t\t\t\t\t<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://hifred.ai/privacy-policy.html\" target=\"_blank\">Privacy Policy.</a></p>",
+          acceptAllButtonText: "Accept",
+          acceptAllButtonAccessibleLabel: "Accept all cookies",
+          rejectNonEssentialButtonText: "Reject",
+          rejectNonEssentialButtonAccessibleLabel: "Reject",
+          preferencesButtonText: "Preferences",
+          preferencesButtonAccessibleLabel: "Toggle preferences"
+        },
+        preferences: {
+          title: "Customize your cookie preferences",
+          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          creditLinkText: "Get this banner for free",
+          creditLinkAccessibleLabel: "Get this banner for free"
+        }
+      },
+      position: {
+        banner: "bottomRight"
+      }
+    });
+  </script>
+  <!-- End of Cookie consent banner -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="https://static.hifred.ai/images/favicon.svg" />
@@ -104,14 +195,16 @@
         <!-- CTA -->
         <div class="hero__cta">
           <div class="hero__cta-buttons">
-            <a href="https://app.hifred.ai/?utm_campaign=website_main" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.hifred.ai/?utm_campaign=website_main" class="btn btn--primary" target="_blank"
+              rel="noopener noreferrer">
               <span>Get Early Access</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="btn__arrow" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
-            <a href="https://app.hifred.ai/?utm_campaign=website_try" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.hifred.ai/?utm_campaign=website_try" class="btn btn--secondary" target="_blank"
+              rel="noopener noreferrer">
               <span>Try a Demo</span>
             </a>
           </div>
@@ -161,14 +254,16 @@
         </p>
 
         <div class="statement__buttons">
-          <a href="https://app.hifred.ai/?utm_campaign=website_main" class="btn btn--statement" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.hifred.ai/?utm_campaign=website_main" class="btn btn--statement" target="_blank"
+            rel="noopener noreferrer">
             <span>Get Early Access</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="btn__arrow" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
-          <a href="https://app.hifred.ai/?utm_campaign=website_try" class="btn btn--statement-outline" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.hifred.ai/?utm_campaign=website_try" class="btn btn--statement-outline" target="_blank"
+            rel="noopener noreferrer">
             <span>Try a Demo</span>
           </a>
         </div>
@@ -495,14 +590,16 @@
           </div>
         </div>
         <div class="statement__buttons" style="margin-top: 3rem;">
-          <a href="https://app.hifred.ai/?utm_campaign=website_main" class="btn btn--statement" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.hifred.ai/?utm_campaign=website_main" class="btn btn--statement" target="_blank"
+            rel="noopener noreferrer">
             <span>Get Early Access</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="btn__arrow" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
-          <a href="https://app.hifred.ai/?utm_campaign=website_try" class="btn btn--statement-outline" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.hifred.ai/?utm_campaign=website_try" class="btn btn--statement-outline" target="_blank"
+            rel="noopener noreferrer">
             <span>Try a Demo</span>
           </a>
         </div>
