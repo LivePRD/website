@@ -225,7 +225,8 @@
       <div class="container statement__inner">
         <div class="statement__chip">The average PM week</div>
         <h2 class="statement__title">
-          60% of your time. Writing specs. Chasing feedback. Aligning teams that never quite have the full picture.
+          60% of your time. Writing specs. Chasing feedback & alignment. </br>Across teams that never quite
+          have the full picture.
         </h2>
         <p class="statement__body">
           That's time you're not spending on strategy, users, or the work that actually moves the needle. Fred sits
@@ -295,105 +296,140 @@
     <section class="how-it-works" id="how-it-works">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">How Fred works</p>
-          <h2 class="section-title">Fred runs alongside your entire workflow. From first signal to shipped feature.</h2>
-          <!--<p class="section-subtitle">Most AI tools drop you into a blank box. Fred starts from context — your research,
-            your tickets, your designs, your decisions — and carries it all the way through.</p>-->
+          <p class="section-label">How it works</p>
+          <h2 class="section-title">From raw idea to shipped feature</h2>
         </div>
 
-        <div class="hiw-timeline">
+        <div class="hiw-rows">
 
-          <!-- Phase 01 — Discovery (content left, empty right) -->
-          <div class="hiw-timeline-item">
-            <div class="hiw-timeline-item__side">
-              <div class="hiw-step-row">
-                <span class="hiw-phase-label hiw-phase-label--discovery">Discovery</span>
-              </div>
-              <h3 class="hiw-row__title">Start with discovery</h3>
-              <p class="hiw-row__text">Drop in interviews, support tickets, NPS, analytics data, churn reports, or raw
-                notes. Fred reads across all of it, surfaces recurring themes, ranks insights by impact, and drafts an
-                opportunity brief — so when you open the spec, you already know what you're solving.</p>
-              <div class="hiw-outputs">
-                <span class="hiw-output-label">Fred's output</span>
-                <div class="hiw-output-tags">
-                  <span class="hiw-output-tag">Insight summary</span>
-                  <span class="hiw-output-tag">Theme clusters</span>
-                  <span class="hiw-output-tag">Opportunity brief</span>
-                </div>
-              </div>
+          <!-- Row 1 -->
+          <div class="hiw-row">
+            <div class="hiw-row__media">
+              <img src="https://static.hifred.ai/images/site/start_from_jira.png" alt="Connect your Jira ticket"
+                class="hiw-img hiw-img--no-shadow" />
             </div>
-            <div class="hiw-timeline-item__node hiw-timeline-item__node--discovery"></div>
-            <div class="hiw-timeline-item__side"></div>
-          </div>
-
-          <!-- Phase 02 — Spec Writing (empty left, content right) -->
-          <div class="hiw-timeline-item">
-            <div class="hiw-timeline-item__side"></div>
-            <div class="hiw-timeline-item__node hiw-timeline-item__node--spec"></div>
-            <div class="hiw-timeline-item__side">
-              <div class="hiw-step-row">
-                <span class="hiw-phase-label hiw-phase-label--spec">Spec</span>
-              </div>
-              <h3 class="hiw-row__title">Write bulletproof specs</h3>
-              <p class="hiw-row__text">Paste a Jira link or drop in your Figma screens. Fred reads the ticket, comments,
-                and linked designs — then drafts acceptance criteria, edge cases, and open questions. You make every
-                call. Fred handles the heavy lifting.</p>
-              <div class="hiw-outputs">
-                <span class="hiw-output-label">Fred's output</span>
-                <div class="hiw-output-tags">
-                  <span class="hiw-output-tag">Live Spec</span>
-                  <span class="hiw-output-tag">Acceptance criteria</span>
-                  <span class="hiw-output-tag">Edge cases</span>
-                  <span class="hiw-output-tag">Open questions</span>
-                </div>
-              </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">01</span></div>
+              <h3 class="hiw-row__title">Connect your Jira ticket - Fred reads everything</h3>
+              <p class="hiw-row__text">Paste a link or open hiFred directly from Jira. Fred reads the ticket, comments,
+                linked designs, and previous decisions — so you never have to repeat yourself or re-explain the context.
+              </p>
             </div>
           </div>
 
-          <!-- Phase 03 — Engineering Alignment (content left, empty right) -->
-          <div class="hiw-timeline-item">
-            <div class="hiw-timeline-item__side">
-              <div class="hiw-step-row">
-                <span class="hiw-phase-label hiw-phase-label--engineer">Engineering</span>
-              </div>
-              <h3 class="hiw-row__title">Hand off to engineering</h3>
-              <p class="hiw-row__text">Engineers ask questions directly in the ticket — Fred answers instantly from the
-                spec. Your Live Spec is available inside Cursor too, so engineers have everything they need without
-                leaving their editor. Gaps caught before a line of code is written.</p>
-              <div class="hiw-outputs">
-                <span class="hiw-output-label">Fred's output</span>
-                <div class="hiw-output-tags">
-                  <span class="hiw-output-tag">Instant Q&amp;A in Jira</span>
-                  <span class="hiw-output-tag">Spec inside Cursor</span>
-                  <span class="hiw-output-tag">Gap detection</span>
+          <!-- Row 2 (reversed) -->
+          <div class="hiw-row hiw-row--reverse">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
                 </div>
+                <video src="https://static.hifred.ai/images/site/specing.mp4" class="hiw-img" autoplay loop muted
+                  playsinline></video>
               </div>
             </div>
-            <div class="hiw-timeline-item__node hiw-timeline-item__node--engineer"></div>
-            <div class="hiw-timeline-item__side"></div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">02</span></div>
+              <h3 class="hiw-row__title">Fred drafts, you decide - spec done in seconds</h3>
+              <p class="hiw-row__text">Fred turns your context into a structured Live Spec in seconds — acceptance
+                criteria, edge cases, open questions. You stay in control of every decision while Fred handles the heavy
+                lifting.</p>
+            </div>
           </div>
 
-          <!-- Phase 04 — Team Alignment (empty left, content right) -->
-          <div class="hiw-timeline-item">
-            <div class="hiw-timeline-item__side"></div>
-            <div class="hiw-timeline-item__node hiw-timeline-item__node--distribute"></div>
-            <div class="hiw-timeline-item__side">
-              <div class="hiw-step-row">
-                <span class="hiw-phase-label hiw-phase-label--distribute">Team alignment</span>
-              </div>
-              <h3 class="hiw-row__title">Align every team</h3>
-              <p class="hiw-row__text">Fred takes your Live Spec and generates what every team needs — a KB article for
-                Support, test scenarios for QA, a GTM brief for Marketing, and release notes for customers. Each adapted
-                for its audience, all from one source of truth.</p>
-              <div class="hiw-outputs">
-                <span class="hiw-output-label">Fred's output</span>
-                <div class="hiw-output-tags">
-                  <span class="hiw-output-tag">KB article</span>
-                  <span class="hiw-output-tag">QA brief</span>
-                  <span class="hiw-output-tag">Marketing brief</span>
-                  <span class="hiw-output-tag">Release notes</span>
+          <!-- Row 3 -->
+          <div class="hiw-row">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
                 </div>
+                <video src="https://static.hifred.ai/images/site/work_visually_01.mp4" class="hiw-img" autoplay loop
+                  muted playsinline></video>
               </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">03</span></div>
+              <h3 class="hiw-row__title">Attach your Figma screens - Fred reasons visually</h3>
+              <p class="hiw-row__text">Attach your Figma screens and Fred reasons visually — mapping UI states, flows,
+                and edge cases directly into the spec. No more translating designs into requirements by hand.</p>
+            </div>
+          </div>
+
+          <!-- Row 4 (reversed) -->
+          <div class="hiw-row hiw-row--reverse">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="https://static.hifred.ai/images/site/engineers.mp4" class="hiw-img" autoplay loop muted
+                  playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">04</span></div>
+              <h3 class="hiw-row__title">Catch gaps before engineers do</h3>
+              <p class="hiw-row__text">Fred flags ambiguities, missing states, and conflicting requirements before a
+                single line of code is written. Ship fewer surprises.</p>
+            </div>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="hiw-row">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="https://static.hifred.ai/images/site/comments.mp4" class="hiw-img" autoplay loop muted
+                  playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">05</span></div>
+              <h3 class="hiw-row__title"> Engineers ask questions. Fred answers. You sleep.</h3>
+              <p class="hiw-row__text">Engineers ask questions directly in the ticket. Fred answers instantly from the
+                spec — so engineers never wait, and you're never interrupted.</p>
+            </div>
+          </div>
+
+          <!-- Row 6 (reversed) -->
+          <div class="hiw-row hiw-row--reverse">
+            <div class="hiw-row__media">
+              <div class="hiw-mockup">
+                <div class="mockup__bar hiw-mockup__bar">
+                  <div class="mockup__dots">
+                    <span class="mockup__dot mockup__dot--red"></span>
+                    <span class="mockup__dot mockup__dot--yellow"></span>
+                    <span class="mockup__dot mockup__dot--green"></span>
+                  </div>
+                </div>
+                <video src="https://static.hifred.ai/images/site/mcp.mp4" class="hiw-img" autoplay loop muted
+                  playsinline></video>
+              </div>
+            </div>
+            <div class="hiw-row__content">
+              <div class="hiw-step-row"><span class="hiw-step">06</span></div>
+              <h3 class="hiw-row__title">The full spec, inside Cursor. No context switching.</h3>
+              <p class="hiw-row__text">Fred's Live Specs are available directly inside Cursor. Engineers get the full
+                context — requirements, edge cases, decisions — without ever leaving their editor.</p>
             </div>
           </div>
 
