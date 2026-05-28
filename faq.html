@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TH5VZRN7');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Cookie consent banner -->
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
+  <script src="cookie-banner/silktide-consent-manager.js"></script>
+  <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: {
+        showBackground: true
+      },
+      cookieIcon: {
+        position: "bottomRight"
+      },
+      cookieTypes: [
+        {
+          id: "necessary",
+          name: "Necessary",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          required: false,
+          onAccept: function () {
+            console.log('Add accept logic for Necessary');
+          },
+          onReject: function () {
+            console.log('Add reject logic for Necessary');
+          }
+        },
+        {
+          id: "analytics",
+          name: "Analytics",
+          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          required: false,
+          onAccept: function () {
+            gtag('consent', 'update', {
+              analytics_storage: 'granted',
+            });
+            dataLayer.push({
+              'event': 'consent_accepted_analytics',
+            });
+          },
+          onReject: function () {
+            gtag('consent', 'update', {
+              analytics_storage: 'denied',
+            });
+          }
+        },
+        {
+          id: "advertising",
+          name: "Advertising",
+          description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+          required: false,
+          onAccept: function () {
+            gtag('consent', 'update', {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+            });
+            dataLayer.push({
+              'event': 'consent_accepted_advertising',
+            });
+          },
+          onReject: function () {
+            gtag('consent', 'update', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+            });
+          }
+        }
+      ],
+      text: {
+        banner: {
+          description: "\n\t\t\t\t\t\t\t<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://hifred.ai/privacy-policy.html\" target=\"_blank\">Privacy Policy.</a></p>",
+          acceptAllButtonText: "Accept",
+          acceptAllButtonAccessibleLabel: "Accept all cookies",
+          rejectNonEssentialButtonText: "Reject",
+          rejectNonEssentialButtonAccessibleLabel: "Reject",
+          preferencesButtonText: "Preferences",
+          preferencesButtonAccessibleLabel: "Toggle preferences"
+        },
+        preferences: {
+          title: "Customize your cookie preferences",
+          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          creditLinkText: "Get this banner for free",
+          creditLinkAccessibleLabel: "Get this banner for free"
+        }
+      },
+      position: {
+        banner: "bottomRight"
+      }
+    });
+  </script>
+  <!-- End of Cookie consent banner -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="https://static.hifred.ai/images/favicon.svg" />
+  <title>HiFred | FAQ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,300;1,9..40,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── FAQ page styles ── */
+    .faq-hero {
+      padding: 7rem 0 4rem;
+      text-align: center;
+    }
+
+    .faq-hero__label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary, #6366f1);
+      margin-bottom: 1rem;
+    }
+
+    .faq-hero__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .faq-hero__subtitle {
+      font-size: 1.1rem;
+      color: var(--color-muted, #6b7280);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .faq-body {
+      padding: 2rem 0 6rem;
+    }
+
+    .faq-section {
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .faq-section__title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary, #6366f1);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-border, rgba(255,255,255,0.08));
+    }
+
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      font-weight: 300;
+      flex-shrink: 0;
+      color: var(--color-muted, #6b7280);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__body {
+      padding: 0 0 1.25rem 1.5rem;
+      font-size: 0.975rem;
+      line-height: 1.7;
+      color: #313131;
+    }
+
+    .faq-item__body p {
+      margin: 0 0 0.75rem;
+    }
+
+    .faq-item__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item__body ul {
+      margin: 0.5rem 0 0.75rem 0;
+      padding: 0 0 0 1.25rem;
+    }
+
+    .faq-item__body li {
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item__body strong {
+      color: #313131;
+    }
+
+    /* reuse comparison table from main page */
+    .faq-section .comparison-table {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH5VZRN7" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager -->
+
+  <!-- Background Decor -->
+  <div class="bg-decor" aria-hidden="true">
+    <div class="bg-decor__blob bg-decor__blob--top-right"></div>
+    <div class="bg-decor__blob bg-decor__blob--bottom-left"></div>
+  </div>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html">
+        <img src="https://static.hifred.ai/images/logo.svg" alt="HiFred" class="navbar__logo" />
+      </a>
+      <div class="navbar__links">
+        <a href="index.html#how-it-works" class="navbar__link navbar__link--nav">How it works</a>
+        <a href="index.html#integrations" class="navbar__link navbar__link--nav">Integrations</a>
+        <a href="index.html#enterprise" class="navbar__link navbar__link--nav">Enterprise</a>
+        <a href="faq.html" class="navbar__link navbar__link--nav">FAQ</a>
+        <a href="https://app.hifred.ai" class="navbar__link" target="_blank">Login</a>
+      </div>
+      <button class="navbar__burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── MOBILE MENU OVERLAY ─── -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu__close" id="menuCloseBtn" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+    <a href="index.html#how-it-works" class="mobile-menu__link">How it works</a>
+    <a href="index.html#integrations" class="mobile-menu__link">Integrations</a>
+    <a href="index.html#enterprise" class="mobile-menu__link">Enterprise</a>
+    <a href="faq.html" class="mobile-menu__link">FAQ</a>
+    <a href="https://app.hifred.ai" class="mobile-menu__link mobile-menu__link--login" target="_blank">Login</a>
+  </div>
+
+  <!-- ─── MAIN ─── -->
+  <main>
+
+    <!-- FAQ Hero -->
+    <section class="faq-hero">
+      <div class="container">
+        <p class="faq-hero__label">FAQ</p>
+        <h1 class="faq-hero__title">Frequently Asked Questions</h1>
+        <p class="faq-hero__subtitle">Everything you need to know about hiFred.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Body -->
+    <section class="faq-body">
+      <div class="container">
+
+        <!-- General -->
+        <div class="faq-section">
+          <p class="faq-section__title">General</p>
+
+          <details class="faq-item">
+            <summary>What is hiFred?</summary>
+            <div class="faq-item__body">
+              <p>hiFred is an AI copilot built for Product Managers. It works alongside you at every stage of the PM workflow — from discovery and spec writing to engineering handoff and team alignment — so you spend less time on coordination overhead and more time on strategy and users.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Who is hiFred for?</summary>
+            <div class="faq-item__body">
+              <p>hiFred is built for the entire company — PMs are the main drivers, but every team benefits:</p>
+              <ul>
+                <li><strong>Product Managers</strong> — The core users. PMs use Fred to run discovery, write specs, manage handoffs, and keep every team aligned without chasing anyone.</li>
+                <li><strong>Engineers</strong> — Enjoy a smooth handoff with zero ambiguity. Engineers can comment, give feedback, and ask questions directly on the spec — and Fred answers instantly, 24/7.</li>
+                <li><strong>Marketing, Sales, Support, QA</strong> — Full visibility into what product and engineering are working on, what's coming next, and where things stand. No more "what are they building?" or "when is this shipping?" — everyone stays in sync automatically.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How is hiFred different from other AI writing tools?</summary>
+            <div class="faq-item__body">
+              <p>Most AI tools start from a blank box and wait for instructions. Fred is different — it learns your product from the context you give it: your tickets, Figma designs, user research, team conversations, and past decisions. From that foundation, Fred helps you see angles you might have missed, surface overlooked options, and think more expansively. But every call is still yours. Fred opens up the space; you decide where to go.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is hiFred like Cursor but for PMs?</summary>
+            <div class="faq-item__body">
+              <p>Exactly how we describe it. Cursor works because it reads your entire codebase before suggesting a single line — so its output fits your actual code, not a generic project. hiFred works the same way for PMs: it reads your tickets, specs, designs, and past decisions, so everything it produces fits your actual product. No generic output, no rewriting from scratch.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How is hiFred different from just using Claude or ChatGPT?</summary>
+            <div class="faq-item__body">
+              <ul>
+                <li><strong>Built for PMs, not general purpose.</strong> hiFred is designed around how PMs actually work. Tools like Claude or ChatGPT can technically be configured for PM work, but that means finding the right prompts, doing ongoing maintenance, and working around real structural limitations.</li>
+                <li><strong>Shared context across your team.</strong> Your docs live locally in general-purpose tools and are hard to share. hiFred gives your whole team shared specs and team-wide context out of the box.</li>
+                <li><strong>No configuration required.</strong> There's no way to give different departments or products their own distinct context in general AI tools. hiFred handles that automatically.</li>
+                <li><strong>Model-agnostic.</strong> General-purpose AI tools can get expensive fast, and you're locked into one provider's pricing and roadmap. hiFred lets you use any LLM or bring your own API tokens — so you control your costs and are never locked into a single vendor.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- How It Works -->
+        <div class="faq-section">
+          <p class="faq-section__title">How It Works</p>
+
+          <details class="faq-item">
+            <summary>What can Fred actually do?</summary>
+            <div class="faq-item__body">
+              <p>Fred helps across four key stages:</p>
+              <ul>
+                <li><strong>Discovery</strong> — Drop in interviews, support tickets, NPS data, churn reports, or raw notes. Fred surfaces recurring themes, ranks insights by impact, and drafts an opportunity brief.</li>
+                <li><strong>Spec writing</strong> — Paste a Jira link or drop in Figma screens. Fred reads the ticket, comments, and designs, then drafts acceptance criteria, edge cases, and open questions.</li>
+                <li><strong>Engineering handoff</strong> — Engineers ask questions directly in the ticket. Fred answers instantly from the spec, 24/7. Your Live Spec is also available inside Cursor so engineers never have to leave their editor.</li>
+                <li><strong>Team alignment</strong> — Fred takes your Live Spec and generates tailored outputs for every team: a KB article for Support, test scenarios for QA, a GTM brief for Marketing, release notes for customers, and an executive summary for management.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do I have to change the way I work?</summary>
+            <div class="faq-item__body">
+              <p>No. hiFred layers on top of your existing tools — Jira, Notion, Linear, Figma, Slack, and more. There's no migration, no IT ticket, and no lengthy rollout. Just connect and go.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does Fred make decisions for me?</summary>
+            <div class="faq-item__body">
+              <p>No. You make every call. Fred handles the heavy lifting — drafting, summarizing, answering questions, catching gaps — but all decisions remain with you.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can Fred help me track my competitors?</summary>
+            <div class="faq-item__body">
+              <p>Yes. Fred includes a deep competitor analysis that runs on a regular cadence, automatically reviewing every key aspect of your competitive landscape. Fred suggests an initial list of competitors to watch, and you can refine it, add new ones, or remove irrelevant ones at any time.</p>
+              <p>This covers pricing changes, feature updates, product positioning, job postings, and release notes — the signals that actually matter for product strategy. The result is always-fresh competitive intel that informs your specs, prioritization, and positioning — without you having to manually track anything.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Live Specs -->
+        <div class="faq-section">
+          <p class="faq-section__title">Live Specs</p>
+
+          <details class="faq-item">
+            <summary>What is a Live Spec?</summary>
+            <div class="faq-item__body">
+              <p>A Live Spec is a PRD that actually stays current. Traditional PRDs go stale the moment they're written — decisions get made in Slack and never captured, engineers find gaps mid-sprint, and no one trusts the doc by the end. A Live Spec evolves with every decision and conversation, lives inside the ticket workflow, and Fred keeps it updated so you don't have to.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How is a Live Spec different from a regular PRD?</summary>
+            <div class="faq-item__body">
+              <table class="comparison-table" style="margin-top: 0.25rem;">
+                <thead>
+                  <tr>
+                    <th class="comparison-table__th comparison-table__th--old">Traditional PRD</th>
+                    <th class="comparison-table__th comparison-table__th--new">Live Spec</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="comparison-table__td--old">Outdated the moment it's saved</td>
+                    <td class="comparison-table__td--new">Evolves with every decision and conversation</td>
+                  </tr>
+                  <tr>
+                    <td class="comparison-table__td--old">Gaps found by engineers mid-sprint</td>
+                    <td class="comparison-table__td--new">Gaps caught before the sprint starts</td>
+                  </tr>
+                  <tr>
+                    <td class="comparison-table__td--old">PM becomes the bottleneck</td>
+                    <td class="comparison-table__td--new">Fred answers engineering questions 24/7</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can engineers access the Live Spec?</summary>
+            <div class="faq-item__body">
+              <p>Yes. Engineers can ask questions directly in the Jira ticket and Fred answers from the spec in real time. The Live Spec is also available inside Cursor, so engineers have everything they need without leaving their editor.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Integrations -->
+        <div class="faq-section">
+          <p class="faq-section__title">Integrations</p>
+
+          <details class="faq-item">
+            <summary>What tools does hiFred integrate with?</summary>
+            <div class="faq-item__body">
+              <p>hiFred works with: Jira, Confluence, Linear, Notion, Slack, and GitHub. Additional integrations are on the roadmap.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do I need to migrate any data?</summary>
+            <div class="faq-item__body">
+              <p>No. hiFred connects to the tools you already use. Nothing moves, nothing breaks.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Access & Pricing -->
+        <div class="faq-section">
+          <p class="faq-section__title">Access &amp; Pricing</p>
+
+          <details class="faq-item">
+            <summary>How do I get access?</summary>
+            <div class="faq-item__body">
+              <p>Just sign up at <a href="https://app.hifred.ai" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary, #6366f1);">hifred.ai</a> — no credit card required, no waitlist. You'll get a generous amount of tokens to explore everything Fred can do. Once your tokens run out, reach out to us and we'll take it from there.</p>
+            </div>
+          </details>
+        </div>
+
+        <!-- Security & Enterprise -->
+        <div class="faq-section">
+          <p class="faq-section__title">Security &amp; Enterprise</p>
+
+          <details class="faq-item">
+            <summary>Is hiFred secure?</summary>
+            <div class="faq-item__body">
+              <p>Yes. hiFred is SOC 2 Type II certified, meaning your data is handled with the security standards enterprise InfoSec teams expect.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does hiFred use my data to train its models?</summary>
+            <div class="faq-item__body">
+              <p>No. Your specs and ticket data never train hiFred's models. What's yours stays yours.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can hiFred be deployed in our own cloud environment?</summary>
+            <div class="faq-item__body">
+              <p>Yes. hiFred supports private VPC deployment for teams that need full infrastructure isolation.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does hiFred support role-based permissions?</summary>
+            <div class="faq-item__body">
+              <p>Yes. hiFred offers fine-grained, role-based permissions across teams, projects, and spec types — controlling who can read, edit, or publish.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is hiFred suitable for large enterprise teams?</summary>
+            <div class="faq-item__body">
+              <p>Yes. hiFred is enterprise-ready with SOC 2 Type II compliance, role-based access controls, private VPC deployment, and a data policy that keeps your information off training sets.</p>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2026 HiFred AI. Built for PMs by PMs.</p>
+      <div class="footer__links">
+        <a href="https://static.hifred.ai/legal/privacy-policy.html" target="_blank" rel="noopener noreferrer"
+          class="footer__link">Privacy policy</a>
+        <a href="https://static.hifred.ai/legal/terms.html" target="_blank" rel="noopener noreferrer"
+          class="footer__link">Terms and conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
