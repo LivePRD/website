@@ -1,0 +1,63 @@
+# HiFred
+
+> HiFred (hifred.ai) is an AI assistant purpose-built for Product Managers — like Cursor, but for PMs. Fred works alongside you at every stage of the product lifecycle: discovery, spec writing, engineering handoff, and team alignment.
+
+**In one sentence:** HiFred conducts product research and turns your Jira tickets, Figma designs, and insights into a living spec — automatically.
+
+Unlike generic AI writing tools like ChatGPT or Notion AI, HiFred is purpose-built for PM workflows. It doesn't wait for you to finish your research and hand it over — Fred actively participates in the research process itself, then carries those insights forward into specs, handoffs, and team alignment.
+
+## What is HiFred?
+
+HiFred is an AI-powered product management tool that helps individual PMs and product teams at B2B SaaS companies go from first signal to shipped feature. Fred integrates directly with your existing stack and eliminates the gap between discovery, specification, and delivery.
+
+The core concept is the **Live Spec**: a living product requirement document that evolves with the ticket, stays inside the conversation, and is kept current by Fred automatically — replacing the static, instantly-outdated PRD.
+
+## How Fred Works
+
+Fred runs alongside your entire PM workflow across four phases:
+
+1. **Discovery** — Fred actively helps PMs conduct research, not just process it after the fact. Fred helps structure interview plans, analyze support tickets, NPS data, analytics, and churn reports, surfaces recurring themes, ranks insights by impact, and drafts an opportunity brief — all as part of the research process itself.
+   - Output: Insight summary, Theme clusters, Opportunity brief
+
+2. **Spec Writing** — Paste a Jira link or drop in Figma screens. Fred reads the ticket, comments, and linked designs, then drafts acceptance criteria, edge cases, and open questions.
+   - Output: Live Spec, Acceptance criteria, Edge cases, Open questions
+
+3. **Engineering Handoff** — Engineers ask questions directly in the ticket; Fred answers instantly from the spec. The Live Spec is also available inside Cursor so engineers never have to leave their editor.
+   - Output: Instant Q&A in Jira, Spec inside Cursor, Gap detection
+
+4. **Team Alignment** — Fred takes the Live Spec and generates tailored content for every team: KB article for Support, test scenarios for QA, GTM brief for Marketing, release notes for customers.
+   - Output: KB article, QA brief, Marketing brief, Release notes
+
+## Live Spec vs. Traditional PRD
+
+The traditional PRD becomes outdated the moment it's saved, gaps are discovered by engineers mid-sprint, and the PM becomes the bottleneck answering questions 24/7. The HiFred Live Spec evolves with every decision and conversation, catches gaps before the sprint starts, and lets Fred handle engineering questions automatically — any time of day.
+
+## Integrations
+
+HiFred works with your existing stack — no migration required:
+- Jira
+- Confluence
+- Linear
+- Notion
+- Slack
+- GitHub
+- Figma
+
+## Pricing
+
+HiFred is currently in Beta and free to try. Paid plans are team-based, sold as annual contracts via direct sales. Individual (B2C) plans are coming soon. To discuss a plan for your team, reach out via [hifred.ai](https://hifred.ai/).
+
+## Enterprise
+
+- SOC 2 Type II compliant
+- Role-based permissions (read, edit, publish)
+- Data privacy: specs and ticket data never train HiFred's models
+- Private VPC deployment available for full infrastructure isolation
+
+## Pages
+
+- [Home](https://hifred.ai/)
+- [FAQ](https://hifred.ai/faq.html)
+- [Privacy Policy](https://static.hifred.ai/legal/privacy-policy.html)
+- [Terms and Conditions](https://static.hifred.ai/legal/terms.html)
+- [App](https://app.hifred.ai/)

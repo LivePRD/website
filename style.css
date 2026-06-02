@@ -14,6 +14,7 @@
 :root {
   --blue: #3B82F6;
   --purple: #8B5CF6;
+  --coal: #212121;
   --slate-900: #0F172A;
   --slate-700: #334155;
   --slate-600: #475569;
@@ -431,7 +432,7 @@ body {
 .btn--primary {
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  background: var(--slate-900);
+  background: var(--coal);
   color: var(--white);
   position: relative;
   overflow: hidden;
@@ -470,7 +471,7 @@ body {
 .btn--dark {
   padding: 1rem;
   font-size: 1rem;
-  background: var(--slate-900);
+  background: var(--coal);
   color: var(--white);
   justify-content: center;
   box-shadow: 0 4px 16px rgba(15, 23, 42, .15);
@@ -689,7 +690,7 @@ body {
 .btn--statement {
   padding: 1rem 2.25rem;
   font-size: 1.1rem;
-  background: var(--slate-900);
+  background: var(--coal);
   color: var(--white);
   box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
   border-radius: 9999px;
@@ -710,7 +711,7 @@ body {
   padding: 1rem 2.25rem;
   font-size: 1.1rem;
   background: transparent;
-  color: var(--slate-900);
+  color: var(--coal);
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 9999px;
 }
