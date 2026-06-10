@@ -139,9 +139,17 @@ class SilktideCookieBanner {
           
           // Run appropriate callback
           if (currentState && typeof cookieType.onAccept === 'function') {
-            cookieType.onAccept();
+            try {
+              cookieType.onAccept();
+            } catch (e) {
+              console.error('Error running onAccept callback:', e);
+            }
           } else if (!currentState && typeof cookieType.onReject === 'function') {
-            cookieType.onReject();
+            try {
+              cookieType.onReject();
+            } catch (e) {
+              console.error('Error running onReject callback:', e);
+            }
           }
         }
       } else {
@@ -184,7 +192,13 @@ class SilktideCookieBanner {
       // Set localStorage and run accept/reject callbacks
       if (type.required == true) {
         localStorage.setItem(`silktideCookieChoice_${type.id}${this.getBannerSuffix()}`, 'true');
-        if (typeof type.onAccept === 'function') { type.onAccept() }
+        if (typeof type.onAccept === 'function') {
+          try {
+            type.onAccept();
+          } catch (e) {
+            console.error('Error running onAccept callback:', e);
+          }
+        }
       } else {
         localStorage.setItem(
           `silktideCookieChoice_${type.id}${this.getBannerSuffix()}`,
@@ -192,18 +206,38 @@ class SilktideCookieBanner {
         );
 
         if (accepted) {
-          if (typeof type.onAccept === 'function') { type.onAccept(); }
+          if (typeof type.onAccept === 'function') {
+            try {
+              type.onAccept();
+            } catch (e) {
+              console.error('Error running onAccept callback:', e);
+            }
+          }
         } else {
-          if (typeof type.onReject === 'function') { type.onReject(); }
+          if (typeof type.onReject === 'function') {
+            try {
+              type.onReject();
+            } catch (e) {
+              console.error('Error running onReject callback:', e);
+            }
+          }
         }
       }
     });
 
     // Trigger optional onAcceptAll/onRejectAll callbacks
     if (accepted && typeof this.config.onAcceptAll === 'function') {
-      if (typeof this.config.onAcceptAll === 'function') { this.config.onAcceptAll(); }
+      try {
+        this.config.onAcceptAll();
+      } catch (e) {
+        console.error('Error running onAcceptAll callback:', e);
+      }
     } else if (typeof this.config.onRejectAll === 'function') {
-      if (typeof this.config.onRejectAll === 'function') { this.config.onRejectAll(); }
+      try {
+        this.config.onRejectAll();
+      } catch (e) {
+        console.error('Error running onRejectAll callback:', e);
+      }
     }
 
     // finally update the checkboxes in the modal with the values from localStorage
@@ -219,6 +253,15 @@ class SilktideCookieBanner {
     }, {});
   }
 
+  getRejectedCookies() {
+    return (this.config.cookieTypes || []).reduce((acc, cookieType) => {
+      acc[cookieType.id] =
+        localStorage.getItem(`silktideCookieChoice_${cookieType.id}${this.getBannerSuffix()}`) ===
+        'false';
+      return acc;
+    }, {});
+  }
+
   runAcceptedCookieCallbacks() {
     if (!this.config.cookieTypes) return;
 
@@ -226,7 +269,11 @@ class SilktideCookieBanner {
     this.config.cookieTypes.forEach((type) => {
       if (type.required) return; // we run required cookies separately in loadRequiredCookies
       if (acceptedCookies[type.id] && typeof type.onAccept === 'function') {
-        if (typeof type.onAccept === 'function') { type.onAccept(); }
+        try {
+          type.onAccept();
+        } catch (e) {
+          console.error('Error running onAccept callback:', e);
+        }
       }
     });
   }
@@ -237,7 +284,11 @@ class SilktideCookieBanner {
     const rejectedCookies = this.getRejectedCookies();
     this.config.cookieTypes.forEach((type) => {
       if (rejectedCookies[type.id] && typeof type.onReject === 'function') {
-        if (typeof type.onReject === 'function') { type.onReject(); }
+        try {
+          type.onReject();
+        } catch (e) {
+          console.error('Error running onReject callback:', e);
+        }
       }
     });
   }
@@ -251,9 +302,21 @@ class SilktideCookieBanner {
         localStorage.getItem(`silktideCookieChoice_${type.id}${this.getBannerSuffix()}`) === 'true';
       // Set localStorage and run accept/reject callbacks
       if (accepted) {
-        if (typeof type.onAccept === 'function') { type.onAccept(); }
+        if (typeof type.onAccept === 'function') {
+          try {
+            type.onAccept();
+          } catch (e) {
+            console.error('Error running onAccept callback:', e);
+          }
+        }
       } else {
-        if (typeof type.onReject === 'function') { type.onReject(); }
+        if (typeof type.onReject === 'function') {
+          try {
+            type.onReject();
+          } catch (e) {
+            console.error('Error running onReject callback:', e);
+          }
+        }
       }
     });
   }
@@ -262,7 +325,11 @@ class SilktideCookieBanner {
     if (!this.config.cookieTypes) return;
     this.config.cookieTypes.forEach((cookie) => {
       if (cookie.required && typeof cookie.onAccept === 'function') {
-        if (typeof cookie.onAccept === 'function') { cookie.onAccept(); }
+        try {
+          cookie.onAccept();
+        } catch (e) {
+          console.error('Error running onAccept callback:', e);
+        }
       }
     });
   }
@@ -590,9 +657,21 @@ class SilktideCookieBanner {
       }
 
       if (accepted) {
-        if (typeof type.onAccept === 'function') { type.onAccept(); }
+        if (typeof type.onAccept === 'function') {
+          try {
+            type.onAccept();
+          } catch (e) {
+            console.error('Error running onAccept callback:', e);
+          }
+        }
       } else {
-        if (typeof type.onReject === 'function') { type.onReject(); }
+        if (typeof type.onReject === 'function') {
+          try {
+            type.onReject();
+          } catch (e) {
+            console.error('Error running onReject callback:', e);
+          }
+        }
       }
       // set the flag to say that the cookie choice has been made
       this.setInitialCookieChoiceMade();
@@ -730,9 +809,17 @@ class SilktideCookieBanner {
               
               // Run the appropriate callback only if the value changed
               if (isAccepted && typeof cookieType.onAccept === 'function') {
-                cookieType.onAccept();
+                try {
+                  cookieType.onAccept();
+                } catch (e) {
+                  console.error('Error running onAccept callback:', e);
+                }
               } else if (!isAccepted && typeof cookieType.onReject === 'function') {
-                cookieType.onReject();
+                try {
+                  cookieType.onReject();
+                } catch (e) {
+                  console.error('Error running onReject callback:', e);
+                }
               }
             }
           }
