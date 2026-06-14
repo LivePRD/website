@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hiFred — Workflow Map</title>
+  <link rel="icon" type="image/svg+xml" href="63089380-4b47-49c2-ba3f-28beeb08a554">
+  <style>/* =================================================================
+   hiFred — Colors & Type
+   Observed from product screenshot: the "HiFred" wordmark is a bold,
+   slightly italic, rounded sans (Fredoka is the closest Google Font
+   match — flagged as a substitution pending official files). Product
+   UI uses Inter at 14–15px across the board.
+   ================================================================= */
+
+/* Figtree — brand UI + display face. All weights loaded locally. */
+@font-face { font-family: 'Figtree'; src: url("69638811-effe-49ee-aba5-691b3b4a5c6b") format('truetype');       font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("f1621fe6-7ca3-4b80-81af-3692503317c1") format('truetype');  font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("5f8dda5f-702f-4201-ae04-aa196a0846a5") format('truetype');      font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("c3458841-d488-48ce-b363-86506d6db0c8") format('truetype');       font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("445da143-363e-46dd-ab36-b6ea23744a92") format('truetype');       font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("2fdd79e9-5b8f-4e27-9fd1-50ca05a1d1c8") format('truetype'); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("c49fd0e8-8333-4230-a0ba-52449529951c") format('truetype');     font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("ffef95e8-43a2-42f7-a83c-b69828b70fa5") format('truetype');font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("63629b1c-8edf-4ec4-8195-c20cce416f6b") format('truetype');         font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("218a2cb1-52db-4a2b-8217-0bf85b436490") format('truetype');   font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("245217bd-496d-4ae0-88dc-5785158f7151") format('truetype');    font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("e5153bb4-a164-49ec-959d-0bfc240bad8d") format('truetype');font-weight: 800; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("eadbceed-7b55-4f4f-ad0d-7fe9e7771bec") format('truetype');        font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Figtree'; src: url("2058350e-9fb5-40a4-bd74-fd8a2383243b") format('truetype');  font-weight: 900; font-style: italic; font-display: swap; }
+
+:root {
+  /* ---------- Brand ---------- */
+  --hf-brand-ink:     #0a0f1c;   /* logotype near-black */
+  --hf-brand-blue:    #2563eb;   /* primary action / link */
+  --hf-brand-blue-600:#2762ea;   /* button fill (pulled from pixel) */
+  --hf-brand-blue-700:#1d4ed8;   /* hover / pressed */
+  --hf-brand-blue-50: #eff6ff;   /* active nav pill, subtle tint */
+
+  /* ---------- Neutrals (foreground) ---------- */
+  --hf-fg-1: #0a0f1c;   /* primary text, page titles */
+  --hf-fg-2: #293244;   /* secondary text, table cells */
+  --hf-fg-3: #5b6473;   /* tertiary, metadata, dates */
+  --hf-fg-4: #8a93a2;   /* placeholder, disabled */
+  --hf-fg-inverse: #ffffff;
+
+  /* ---------- Neutrals (background) ---------- */
+  --hf-bg-app:      #ffffff;   /* sidebar, cards, surfaces */
+  --hf-bg-canvas:   #f9fafb;   /* main content canvas */
+  --hf-bg-subtle:   #f3f4f6;   /* hovered row, subdued chip */
+  --hf-bg-muted:    #e5e7eb;   /* draft badge, inactive chip */
+
+  /* ---------- Borders ---------- */
+  --hf-border-1: #eceef2;   /* hairline dividers, row rules */
+  --hf-border-2: #dfe3ea;   /* input border */
+  --hf-border-3: #c4cbd6;   /* focus outline inactive */
+
+  /* ---------- Semantic (status) ---------- */
+  --hf-success-bg:   #dbf3e1;
+  --hf-success-fg:   #0f7a37;
+  --hf-success-solid:#24c460;
+
+  --hf-warning-bg:   #fef9c2;   /* "In Review" badge bg */
+  --hf-warning-fg:   #92610d;   /* amber-ish text */
+  --hf-warning-solid:#eab308;
+
+  --hf-danger-bg:    #fde4e4;
+  --hf-danger-fg:    #b42318;
+  --hf-danger-solid: #ef4444;
+
+  --hf-info-bg:      #eff6ff;
+  --hf-info-fg:      #1d4ed8;
+  --hf-info-solid:   #2563eb;
+
+  /* ---------- Accent palette (avatars, category chips) ---------- */
+  --hf-accent-purple: #a856f6;
+  --hf-accent-green:  #24c460;
+  --hf-accent-cyan:   #00b0d1;
+  --hf-accent-pink:   #ec4899;
+  --hf-accent-amber:  #f59e0b;
+  --hf-accent-indigo: #6366f1;
+
+  /* ---------- Type: families ---------- */
+  --hf-font-ui:      'Figtree', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --hf-font-display: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --hf-font-mono:    ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  /* ---------- Type: scale (product is compact 14–15px) ---------- */
+  --hf-fs-xs:   12px;   /* meta, timestamps */
+  --hf-fs-sm:   13px;   /* badges, compact labels */
+  --hf-fs-md:   14px;   /* default body */
+  --hf-fs-lg:   15px;   /* table cell primary */
+  --hf-fs-xl:   17px;   /* section title */
+  --hf-fs-2xl:  22px;   /* page title "Requirements" */
+  --hf-fs-3xl:  28px;
+  --hf-fs-4xl:  36px;
+
+  --hf-lh-tight: 1.25;
+  --hf-lh-body:  1.5;
+  --hf-lh-loose: 1.65;
+
+  /* ---------- Spacing scale (4-step) ---------- */
+  --hf-space-1: 4px;
+  --hf-space-2: 8px;
+  --hf-space-3: 12px;
+  --hf-space-4: 16px;
+  --hf-space-5: 20px;
+  --hf-space-6: 24px;
+  --hf-space-8: 32px;
+  --hf-space-10: 40px;
+  --hf-space-12: 48px;
+
+  /* ---------- Radii ---------- */
+  --hf-radius-xs: 4px;
+  --hf-radius-sm: 6px;
+  --hf-radius-md: 8px;    /* buttons, inputs */
+  --hf-radius-lg: 10px;   /* cards, modals */
+  --hf-radius-xl: 14px;
+  --hf-radius-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --hf-shadow-xs:   0 1px 0 rgba(10,15,28,0.04);
+  --hf-shadow-sm:   0 1px 2px rgba(10,15,28,0.05), 0 1px 1px rgba(10,15,28,0.03);
+  --hf-shadow-md:   0 4px 10px rgba(10,15,28,0.06), 0 1px 2px rgba(10,15,28,0.04);
+  --hf-shadow-lg:   0 12px 28px rgba(10,15,28,0.10), 0 4px 8px rgba(10,15,28,0.05);
+  --hf-shadow-focus: 0 0 0 3px rgba(37,99,235,0.22);
+
+  /* ---------- Layout ---------- */
+  --hf-sidebar-w: 232px;
+  --hf-topbar-h:  56px;
+  --hf-max-content: 1480px;
+}
+
+/* ============================================================
+   Base element styles — semantic defaults
+   ============================================================ */
+
+html, body {
+  font-family: var(--hf-font-ui);
+  color: var(--hf-fg-1);
+  background: var(--hf-bg-app);
+  font-size: var(--hf-fs-md);
+  line-height: var(--hf-lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  color: var(--hf-fg-1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: var(--hf-lh-tight);
+  margin: 0;
+}
+h1 { font-size: var(--hf-fs-2xl); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: var(--hf-fs-xl); }
+h3 { font-size: var(--hf-fs-lg); }
+h4 { font-size: var(--hf-fs-md); }
+
+p  { margin: 0; color: var(--hf-fg-2); }
+small { font-size: var(--hf-fs-xs); color: var(--hf-fg-3); }
+code { font-family: var(--hf-font-mono); font-size: 0.92em; background: var(--hf-bg-subtle);
+       padding: 1px 5px; border-radius: var(--hf-radius-xs); }
+
+a  { color: var(--hf-brand-blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+hr { border: 0; border-top: 1px solid var(--hf-border-1); margin: var(--hf-space-6) 0; }
+
+/* Display face for the wordmark and any hero headline */
+.hf-display {
+  font-family: var(--hf-font-display);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--hf-brand-ink);
+}
+
+/* The "HiFred" wordmark itself */
+.hf-wordmark {
+  font-family: var(--hf-font-display);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--hf-brand-ink);
+  font-size: 26px;
+}
+.hf-wordmark .hi  { }
+.hf-wordmark .fred { }
+
+/* Focus ring — blue halo, matches active pill */
+:where(button, a, input, select, textarea):focus-visible {
+  outline: none;
+  box-shadow: var(--hf-shadow-focus);
+  border-radius: var(--hf-radius-md);
+}
+</style>
+
+  <style>
+    :root {
+      --bg:        #000;
+      --ink:       #f1f1f3;
+      --ink-2:     #b5b6bd;
+      --ink-3:     #7c7d86;
+      --ink-4:     #4a4b54;
+      --line:      #1f2026;
+      --line-2:    #2c2d35;
+      --blue:      #4f8aff;
+      --blue-deep: #2563eb;
+
+      /* phase status dots */
+      --d-discovery:   #00d4d4;
+      --d-spec:        #eab308;
+      --d-engineering: #24c460;
+
+      /* team chip palette */
+      --t-marketing:   #f97316;
+      --t-qa:          #a855f7;
+      --t-support:     #06b6d4;
+      --t-sales:       #eab308;
+      --t-devops:      #ef4444;
+      --t-legal:       #c4a26a;
+      --t-management:  #9ca3af;
+      --t-release:     #22c55e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+    body {
+      font-family: var(--hf-font-ui);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ---------- workflow stage ---------- */
+    .stage {
+      position: relative;
+      width: 100%;
+      max-width: 1640px;
+      margin: 0 auto;
+      padding: 56px 36px 48px;
+      box-sizing: border-box;
+    }
+
+
+    /* ---------- the 3-column grid ---------- */
+    .grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 0.65fr 0.65fr 1.05fr;
+      column-gap: 32px;
+      align-items: stretch;   /* all three columns share the same row height */
+    }
+
+    /* ---------- shared card chrome ---------- */
+    .card {
+      position: relative;
+      background: linear-gradient(180deg, #0e0f13 0%, #0a0b0e 100%);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px 14px 16px;
+      box-shadow: 0 12px 32px -16px rgba(0,0,0,0.6);
+      transition: border-color 320ms ease, box-shadow 320ms ease, transform 320ms ease;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 12px; bottom: 12px;
+      width: 2px;
+      border-radius: 0 2px 2px 0;
+      background: var(--accent, var(--line-2));
+      opacity: 0.7;
+    }
+    .card .num {
+      position: absolute;
+      right: 12px; top: 12px;
+      font: 600 10px/1 var(--hf-font-mono);
+      letter-spacing: 0.18em;
+      color: var(--ink-4);
+    }
+
+    /* ----- LEFT column: phase cards (aligned, symmetrical) ----- */
+    .col-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 480px;
+      padding-top: 4px;
+    }
+    .phase { --accent: var(--ink-4); width: calc(100% - 84px); align-self: flex-start; }
+    .phase.p-discovery   { --accent: var(--d-discovery);   margin-left: 36px; }
+    .phase.p-spec        { --accent: var(--d-spec); }
+    .phase.p-engineering { --accent: var(--d-engineering); margin-left: 84px; }
+
+    .phase .ph-head {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 8px;
+    }
+    .phase .ph-head .pdot {
+      width: 9px; height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      flex: 0 0 auto;
+    }
+    .phase .ph-head .name {
+      font: 700 16px/1 var(--hf-font-mono);
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+    .phase .body {
+      font: 400 12px/1.5 var(--hf-font-mono);
+      color: var(--ink-2);
+    }
+    .phase .body .row { display: block; }
+    .phase .body .muted { color: var(--ink-4); }
+    .phase .body .key   { color: var(--ink-3); margin-right: 6px; }
+    .phase .body .blue  { color: var(--blue); }
+    .phase .body .ok    { color: var(--d-engineering); }
+    .phase .body .warn  { color: var(--d-spec); }
+    .phase .body .arrow { color: var(--ink-3); }
+    .phase .body p.title {
+      color: var(--ink);
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+    .phase .body .gap-top { margin-top: 8px; display: block; }
+    .phase .body .gap-mid { margin-top: 6px; display: block; }
+
+    /* ----- CENTER column: hiFred logo ----- */
+    .col-center {
+      align-self: stretch;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;   /* logo lands at vertical middle of row → aligns with spec card */
+      padding: 0 12px;
+      position: relative;
+      z-index: 2;                /* logo sits on top of connection lines */
+    }
+    .hifred-logo {
+      position: relative;
+      z-index: 2;
+      width: 140px;
+      height: auto;
+      display: block;
+      user-select: none;
+    }
+
+    /* ----- RIGHT column: team cards (aligned, symmetrical) ----- */
+    .col-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;   /* each card shrink-wraps its content */
+      min-height: 480px;
+      padding-top: 4px;
+      margin-left: 24px;     /* small rightward nudge */
+    }
+    .team {
+      --accent: var(--ink-4);
+      padding: 10px 14px 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .team.t-marketing  { --accent: var(--t-marketing);  margin-left: -64px; }
+    .team.t-qa         { --accent: var(--t-qa);         margin-left: -40px; }
+    .team.t-support    { --accent: var(--t-support);    margin-left: -18px; }
+    .team.t-sales      { --accent: var(--t-sales); }
+    .team.t-devops     { --accent: var(--t-devops); }
+    .team.t-legal      { --accent: var(--t-legal);      margin-left: -18px; }
+    .team.t-management { --accent: var(--t-management); margin-left: -40px; }
+    .team.t-release    { --accent: var(--t-release);    margin-left: -64px; }
+
+    .team .chip {
+      flex: 0 0 auto;
+      padding: 3px 9px;
+      border-radius: 6px;
+      border: 1px solid color-mix(in oklab, var(--accent) 50%, transparent);
+      background: color-mix(in oklab, var(--accent) 12%, transparent);
+      color: var(--accent);
+      font: 700 10px/1.3 var(--hf-font-mono);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .team .title {
+      flex: 0 1 auto;
+      font: 600 13px/1.3 var(--hf-font-mono);
+      color: var(--ink);
+      margin: 0;
+      white-space: nowrap;
+    }
+    .team .aside {
+      flex: 0 0 auto;
+      font: 400 11px/1.3 var(--hf-font-mono);
+      color: var(--ink-3);
+      letter-spacing: 0.02em;
+    }
+    .team .aside .blue { color: var(--blue); }
+
+    /* ---------- SVG connecting lines (static) ---------- */
+    .connections {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 0;
+    }
+    .connections path {
+      fill: none;
+      stroke: rgba(79,138,255,0.42);
+      stroke-width: 1.25;
+      stroke-linecap: round;
+      filter: drop-shadow(0 0 4px rgba(79,138,255,0.35));
+    }
+    .connections path.to-left  { stroke: rgba(120,160,255,0.46); }
+    .connections path.to-right { stroke: rgba(79,138,255,0.40); }
+    .connections circle {
+      fill: rgba(79,138,255,0.85);
+    }
+
+
+
+    @media (max-width: 1100px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .col-center { padding: 24px 0; order: -1; }
+      .connections { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <section class="stage">
+
+    <div class="grid">
+
+      <!-- SVG connecting lines (drawn by JS to match real card positions) -->
+      <svg class="connections" aria-hidden="true"></svg>
+
+      <!-- LEFT: PHASES -->
+      <div class="col-left">
+
+        <article class="card phase p-discovery">
+          <span class="num">01</span>
+          <div class="ph-head">
+            <span class="pdot"></span>
+            <span class="name">Discovery</span>
+          </div>
+          <div class="body">
+            <span class="row">· 14 user interviews</span>
+            <span class="row">· 38 support tickets</span>
+            <span class="row">· NPS responses (q2 + q3)</span>
+            <span class="gap-top arrow">→ 3 themes identified</span>
+          </div>
+        </article>
+
+        <article class="card phase p-spec">
+          <span class="num">02</span>
+          <div class="ph-head">
+            <span class="pdot"></span>
+            <span class="name">Spec</span>
+          </div>
+          <div class="body">
+            <p class="title">Smart Notifications</p>
+            <span class="row"><span class="key">AC1</span>Users can mute by category</span>
+            <span class="row"><span class="key">AC2</span>Quiet hours sync to calendar</span>
+            <span class="gap-top warn">⚑ 2 gaps flagged before sprint</span>
+          </div>
+        </article>
+
+        <article class="card phase p-engineering">
+          <span class="num">03</span>
+          <div class="ph-head">
+            <span class="pdot"></span>
+            <span class="name">Engineering</span>
+          </div>
+          <div class="body">
+            <span class="row"><span class="key">ENG</span>What if the user refreshes mid-flow?</span>
+            <span class="row gap-mid"><span class="key blue">FRED</span>Session persists 24h, then redirects.</span>
+            <span class="gap-top ok">✓ <span style="color:var(--ink-2)">0 open questions</span></span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- CENTER: hiFred logo -->
+      <div class="col-center">
+        <img class="hifred-logo" src="783143ed-cbe7-48a0-83b7-30c4bfd88fe3" alt="hiFred">
+      </div>
+
+      <!-- RIGHT: TEAM OUTPUTS (compact one-liners) -->
+      <div class="col-right">
+
+        <article class="card team t-marketing">
+          <span class="chip">Marketing</span>
+          <p class="title">Feature brief — Smart Notifications</p>
+        </article>
+
+        <article class="card team t-qa">
+          <span class="chip">QA</span>
+          <p class="title">Test plan — Smart Notifications</p>
+        </article>
+
+        <article class="card team t-support">
+          <span class="chip">Support</span>
+          <p class="title">KB article — Tuning your notifications</p>
+        </article>
+
+        <article class="card team t-sales">
+          <span class="chip">Sales</span>
+          <p class="title">One-pager — What's new for renewals</p>
+        </article>
+
+        <article class="card team t-devops">
+          <span class="chip">DevOps</span>
+          <p class="title">Deploy plan — Smart Notifications</p>
+          <span class="aside">10% → 100%</span>
+        </article>
+
+        <article class="card team t-legal">
+          <span class="chip">Legal</span>
+          <p class="title">Compliance review — retention scope</p>
+          <span class="aside">90d</span>
+        </article>
+
+        <article class="card team t-management">
+          <span class="chip">Management</span>
+          <p class="title">Exec summary — Q3 feature update</p>
+          <span class="aside">Jun 14</span>
+        </article>
+
+        <article class="card team t-release">
+          <span class="chip">Release</span>
+          <p class="title">What's new in v3.4</p>
+          <span class="aside">live</span>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script>
+    // Draw smooth flow-chart curves from the hiFred logo to every phase card
+    // (left) and every team card (right). Re-runs on load + resize so the
+    // wiring stays accurate at any viewport.
+    (function () {
+      const SVG_NS = 'http://www.w3.org/2000/svg';
+      const grid  = document.querySelector('.grid');
+      const svg   = document.querySelector('.connections');
+      const logo  = document.querySelector('.hifred-logo');
+      const lefts  = [...document.querySelectorAll('.col-left  .card')];
+      const rights = [...document.querySelectorAll('.col-right .card')];
+
+      function draw() {
+        if (!grid || !svg || !logo) return;
+        const g = grid.getBoundingClientRect();
+        const l = logo.getBoundingClientRect();
+        svg.setAttribute('viewBox', `0 0 ${g.width} ${g.height}`);
+        svg.setAttribute('width',  g.width);
+        svg.setAttribute('height', g.height);
+        svg.innerHTML = '';
+
+        // Logo anchor points: a touch inset from the logo edges so curves
+        // visibly meet the mark, not float off it.
+        const inset = Math.min(18, l.width * 0.08);
+        const logoY = (l.top + l.bottom) / 2 - g.top;
+        const leftAnchor  = { x: l.left  - g.left + inset, y: logoY };
+        const rightAnchor = { x: l.right - g.left - inset, y: logoY };
+
+        const makePath = (from, to, klass) => {
+          // Cubic bezier with control points pulled horizontally — classic
+          // flow-chart S-curve. Handle length scales with horizontal gap so
+          // close cards bend tightly and distant ones swoop gracefully.
+          const dx = Math.abs(to.x - from.x);
+          const handle = Math.max(40, dx * 0.55);
+          const c1x = from.x + Math.sign(to.x - from.x) * handle;
+          const c2x = to.x   - Math.sign(to.x - from.x) * handle;
+          const d = `M ${from.x.toFixed(1)} ${from.y.toFixed(1)} ` +
+                    `C ${c1x.toFixed(1)} ${from.y.toFixed(1)}, ` +
+                    `${c2x.toFixed(1)} ${to.y.toFixed(1)}, ` +
+                    `${to.x.toFixed(1)} ${to.y.toFixed(1)}`;
+          const p = document.createElementNS(SVG_NS, 'path');
+          p.setAttribute('d', d);
+          p.setAttribute('class', klass);
+          svg.appendChild(p);
+
+          // Small dot where the line meets the card — gives the curve a
+          // clear terminus instead of fading into the border.
+          const dot = document.createElementNS(SVG_NS, 'circle');
+          dot.setAttribute('cx', to.x.toFixed(1));
+          dot.setAttribute('cy', to.y.toFixed(1));
+          dot.setAttribute('r', '2');
+          svg.appendChild(dot);
+        };
+
+        lefts.forEach(card => {
+          const r = card.getBoundingClientRect();
+          const to = {
+            x: r.right - g.left,
+            y: (r.top + r.bottom) / 2 - g.top
+          };
+          makePath(leftAnchor, to, 'to-left');
+        });
+
+        rights.forEach(card => {
+          const r = card.getBoundingClientRect();
+          const to = {
+            x: r.left - g.left,
+            y: (r.top + r.bottom) / 2 - g.top
+          };
+          makePath(rightAnchor, to, 'to-right');
+        });
+      }
+
+      // Initial draw (after fonts/images settle), plus resize + image load.
+      const ready = () => requestAnimationFrame(draw);
+      if (document.readyState === 'complete') ready();
+      else window.addEventListener('load', ready);
+      window.addEventListener('resize', () => requestAnimationFrame(draw));
+      if (logo && !logo.complete) logo.addEventListener('load', ready);
+    })();
+  </script>
+
+
+
+</body></html>
